@@ -19,8 +19,8 @@ cp -pvr $HOME/atsflutter/build/web/* $HOME/atsflutterWebDeploy/atsflutter/;
 
 cd $HOME/atsflutterWebDeploy;
 
-docker build -t gcr.io/atsflutter001/atsflutter:0.1.0 .;
+docker build -t gcr.io/atsflutter001/atsflutter:0.1.1 .;
 
-docker save gcr.io/atsflutter001/atsflutter:0.1.0 | gzip > atsflutter-0.1.0.tar.gz
+docker save gcr.io/atsflutter001/atsflutter:0.1.1 | gzip > atsflutter-0.1.1.tar.gz
 
-scp $HOME/atsflutterWebDeploy/atsflutter-0.1.0.tar.gz charliepi@192.168.0.90:/home/charliepi/
+scp $HOME/atsflutterWebDeploy/atsflutter-0.1.1.tar.gz charliepi@192.168.0.90:/home/charliepi/
