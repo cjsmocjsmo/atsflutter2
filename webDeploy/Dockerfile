@@ -16,19 +16,7 @@ RUN export GOPATH=/go/src/atsflutter
 RUN go get -v /go/src/atsflutter
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main /go/src/atsflutter
 
-# FROM alpine:latest
-# WORKDIR /root/
-# COPY --from=builder /go/src/atsflutter/main .
-# RUN mkdir atsflutter
-# COPY atsflutter/ atsflutter/
-
-FROM ubuntu:22.04
-RUN \
-    apt-get update && \
-    apt-get -y dist-upgrade && \
-    apt-get -y autoclean && \
-    apt-get -y autoremove
-
+FROM alpine:latest
 WORKDIR /root/
 COPY --from=builder /go/src/atsflutter/main .
 RUN mkdir atsflutter
