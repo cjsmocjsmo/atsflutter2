@@ -34,12 +34,11 @@ class _EstimateFormState extends State<EstimateForm> {
   //   return fref;
   // }
 
-
   TextEditingController nameController = TextEditingController();
   TextEditingController addressController = TextEditingController();
   TextEditingController citystateController = TextEditingController();
   TextEditingController telephoneController = TextEditingController();
-  TextEditingController emalController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
   TextEditingController messageController = TextEditingController();
   TextEditingController dateController = TextEditingController();
   String? name;
@@ -53,6 +52,17 @@ class _EstimateFormState extends State<EstimateForm> {
   // String? downloadurl;
 
   final docData = {"delete": "no", "uuid": "10"};
+
+  @override
+  void dispose() {
+    nameController.dispose();
+    addressController.dispose();
+    citystateController.dispose();
+    telephoneController.dispose();
+    messageController.dispose();
+    dateController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -263,7 +273,10 @@ class _EstimateFormState extends State<EstimateForm> {
                             docData['imgref'] = imgref.toString();
                             print(docData);
                             var db = FirebaseFirestore.instance;
-                            db.collection("estimates").doc(docname).set(docData);
+                            db
+                                .collection("estimates")
+                                .doc(docname)
+                                .set(docData);
                             Navigator.pop(context);
                           },
                           child: const Center(child: Text('Schedule Estimate')),

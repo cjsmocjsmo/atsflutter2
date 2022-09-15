@@ -11,10 +11,9 @@ class ReviewsForm extends StatefulWidget {
 class _ReviewsFormState extends State<ReviewsForm> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController nameController = TextEditingController();
-  TextEditingController emalController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
   TextEditingController messageController = TextEditingController();
   String? name;
-
   String? email;
   String? message;
   final docData = {
@@ -25,6 +24,14 @@ class _ReviewsFormState extends State<ReviewsForm> {
     "uuid": "10",
     "imgref": "none",
   };
+
+  @override
+  void dispose() {
+    nameController.dispose();
+    emailController.dispose();
+    messageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -188,4 +195,3 @@ class _ReviewsFormState extends State<ReviewsForm> {
     );
   }
 }
-
