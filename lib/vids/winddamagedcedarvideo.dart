@@ -4,8 +4,8 @@ import 'package:video_player/video_player.dart';
 
 // void main() => runApp(const TopOutVideoPlayer());
 
-class TopOutVideoPlayer extends StatelessWidget {
-  const TopOutVideoPlayer({super.key});
+class WindDamagedCedarVideoPlayer extends StatelessWidget {
+  const WindDamagedCedarVideoPlayer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class VideoPlayerScreenState extends State<VideoPlayerScreen> {
     // offers several different constructors to play videos from assets, files,
     // or the internet.
     _controller = VideoPlayerController.network(
-      'https://alphatreeio.xyz/video/TopOut.mp4',
+      "https://youtu.be/9rvT2BEYbf8",
     );
 
     // Initialize the controller and store the Future for later use.
