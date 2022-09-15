@@ -2,10 +2,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-// void main() => runApp(const TopOutVideoPlayer());
+// void main() => runApp(const JustGettingStartedVidPlayer());
 
-class WindDamagedCedarVideoPlayer extends StatelessWidget {
-  const WindDamagedCedarVideoPlayer({super.key});
+class JustGettingStartedVidPlayer extends StatelessWidget {
+  const JustGettingStartedVidPlayer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class VideoPlayerScreenState extends State<VideoPlayerScreen> {
     // offers several different constructors to play videos from assets, files,
     // or the internet.
     _controller = VideoPlayerController.network(
-      "https://youtu.be/9rvT2BEYbf8",
+      'https://youtu.be/wI5ZR78-aKM',
     );
 
     // Initialize the controller and store the Future for later use.
@@ -53,7 +53,6 @@ class VideoPlayerScreenState extends State<VideoPlayerScreen> {
   void dispose() {
     // Ensure disposing of the VideoPlayerController to free up resources.
     _controller.dispose();
-
     super.dispose();
   }
 
@@ -61,7 +60,7 @@ class VideoPlayerScreenState extends State<VideoPlayerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Wind Damaged Cedar'),
+        title: const Text('Just Getting Started'),
       ),
       // Use a FutureBuilder to display a loading spinner while waiting for the
       // VideoPlayerController to finish initializing.
